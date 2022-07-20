@@ -26,6 +26,16 @@ time, mark, audio, video {
 
 /*===========Home Page Styling============*/
 
+
+/*===========Brewery Page Styling============*/
+.brew {
+	background-color:#c3ab8f;
+}
+
+.brew main {
+	background-color: #dfd1c1;
+}
+
 /*=============Media Queries==============*/
 @media screen and (max-width: 1300px) {
 

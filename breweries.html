@@ -5,12 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
     <title>Breweries</title>
   </head>
-  <body>
+  <body class="brew">
     <header>
-      <img src="#" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer">
+      <img src="images/logo.png" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer" width="500">
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -19,22 +19,22 @@
         </ul>
     </nav>
     </header>
-  <script src="file.js"></script>
     <main>
       <section>
         <h1>ESCAPE BEYOND THE MAN CAVE</h1>
         <h2>Find your local brewery here</h2>
-        <p>Enter your Zip Code to search for breweries around you.</p>
+        <p>Enter your city name to search for breweries around you.</p>
       </section>
       <div id="brewery-section">
         <form>
           <label for="brewery-search">Enter Location</label>
-          <input name="search" id="brewery-search" type="text" placeholder="enter your zip code here"/>
+          <input name="search" id="brewery-search" type="text" placeholder="enter your city here"/>
           <button type="submit">Search</button>
         </form>
         <section id="breweries-resp"></section>
       </div>
       <h3>Cheers!</h3>
     </main>
+    <script src="javascript/breweries.js"></script>
   </body>
 </html>
