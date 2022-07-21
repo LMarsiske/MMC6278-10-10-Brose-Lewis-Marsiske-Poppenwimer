@@ -95,6 +95,7 @@ video {
   src: url("/sketchzone/Sketchzone.otf");
 }
 
+
 /*===========Home Page Styling============*/
 
 /*===========Brewery Page Styling============*/
@@ -104,11 +105,12 @@ video {
   font-weight: 400;
   font-style: normal;
   color: #2a231e;
+  font-size: 1.1em;
 }
 
 .brew main {
   background-color: #dfd1c1;
-  max-width: 70%;
+  max-width: 90%;
   margin: 0 auto;
   text-align: center;
 }
@@ -126,7 +128,8 @@ video {
 .logo{
   margin: 0 auto;
   display: block;
-  max-width: 70%;
+  max-width: 90%;
+  padding-top: 50px;
 }
 
 .brew nav{
@@ -139,23 +142,32 @@ video {
   max-width: 70%;
   margin: 0 auto;
   text-align: center;
+  padding: 15px 0;
 }
 
 .brew ul li{
   display: inline;
   list-style-type:none;
   font-size:1.2em;
+  padding: 0 50px;
 }
 
 .brew ul li a{
   text-decoration: none;
+  color:#2a231e;
+}
+
+.brew section,
+#brewery-section{
+  padding: 0 10px;
 }
 
 .brew h1{
   font-family: sketchzone, proxima nova, sans-serif;
-  font-size:3.5em;
+  font-size: 2em;
   color:#387203;
   text-shadow:1px 1px #ffffff;
+  padding:20px 0;
 }
 
 .brew h2,
@@ -164,22 +176,97 @@ video {
 }
 
 .brew h2{
-  font-size: 2em;
+  font-size: 1.7em;
 }
 
 .brew h3{
   color:#387203;
-  font-size: 4.6em;
+  font-size: 3em;
+}
+
+#brewery-section form{
+  padding: 20px 0 50px;
+}
+
+#brewery-section button{
+  color: #ffffff;
+  background-color: #387203;
+  border-radius: 2px;
+  padding: 5px;
+}
+
+#brewery-search{
+  border: 2px solid;
+  border-radius: 2px;
+  padding: 5px;
 }
 
 #breweries-resp{
   background-color: #ffffff;
-  max-width: 50%;
+  max-width: 100%;
+}
+
+#breweries-resp h2{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
+}
+
+#breweries-resp h3{
+  font-family: proxima-nova,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 1em;
 }
 
 /*=============Media Queries==============*/
-@media screen and (max-width: 1300px) {
+@media screen and (min-width: 768px) {
+  .logo{
+    max-width: 50%;
+  }
+
 }
 
-@media screen and (max-width: 800px) {
+@media screen and (min-width: 1200px) {
+
+
+    /*Brew Page*/
+    .brew{
+      font-size: 1.1em;
+    }
+
+    .brew main{
+      max-width: 60%;
+    }
+
+    .brew main section {
+      padding: 0 70px;
+    }
+
+    .brew h1{
+      font-size:3em;
+    }
+    
+    .brew h2{
+      font-size: 2em;
+    }
+
+    .brew h3{
+      font-size: 4em;
+    }
+
+    .brew ul li{
+      font-size:1.2em;
+    }
+
+    #breweries-resp h2{
+      font-size: 1.5em;
+    }
+
+    #breweries-resp h3{
+      font-size: 1.2em;
+    }
+
+
 }
