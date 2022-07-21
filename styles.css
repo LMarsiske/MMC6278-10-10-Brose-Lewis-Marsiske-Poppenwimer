@@ -90,20 +90,91 @@ video {
 }
 
 /*===========Universal Styling============*/
+@font-face {
+  font-family: sketchzone;
+  src: url("/sketchzone/Sketchzone.otf");
+}
 
 /*===========Home Page Styling============*/
 
 /*===========Brewery Page Styling============*/
 .brew {
   background-color: #c3ab8f;
+  font-family: proxima-nova,sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2a231e;
 }
 
 .brew main {
   background-color: #dfd1c1;
+  max-width: 70%;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .brewery {
   margin: 2%;
+}
+
+.brew header{
+  background-image: url("images/wood-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 1500px auto;
+}
+
+.logo{
+  margin: 0 auto;
+  display: block;
+  max-width: 70%;
+}
+
+.brew nav{
+  background-color: #dfd1c1;
+  border-top: #387203 solid 5px;
+  border-bottom: #387203 solid 5px;
+}
+
+.brew nav ul{
+  max-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.brew ul li{
+  display: inline;
+  list-style-type:none;
+  font-size:1.2em;
+}
+
+.brew ul li a{
+  text-decoration: none;
+}
+
+.brew h1{
+  font-family: sketchzone, proxima nova, sans-serif;
+  font-size:3.5em;
+  color:#387203;
+  text-shadow:1px 1px #ffffff;
+}
+
+.brew h2,
+.brew h3{
+  font-family: 'La Belle Aurore', cursive;
+}
+
+.brew h2{
+  font-size: 2em;
+}
+
+.brew h3{
+  color:#387203;
+  font-size: 4.6em;
+}
+
+#breweries-resp{
+  background-color: #ffffff;
+  max-width: 50%;
 }
 
 /*=============Media Queries==============*/
