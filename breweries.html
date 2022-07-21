@@ -5,30 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--CSS-->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <title>Breweries</title>
   </head>
   <body class="brew">
     <header>
-      <img src="images/logo.png" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer" width="500">
+      <img
+        src="images/logo.png"
+        alt="Dad Jokes and Beer Logo"
+        title="Dad Jokes and Beer"
+        width="500"
+      />
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
           <li><a href="breweries.html">Find Local Brewery</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
-    </nav>
+      </nav>
     </header>
     <main>
       <section>
         <h1>ESCAPE BEYOND THE MAN CAVE</h1>
         <h2>Find your local brewery here</h2>
-        <p>Enter your city name to search for breweries around you.</p>
+        <p>
+          Enter your city and state (e.g. Gainesville, Fl or Gainesville,
+          Florida) or zip code to search for breweries around you.
+        </p>
       </section>
       <div id="brewery-section">
         <form>
           <label for="brewery-search">Enter Location</label>
-          <input name="search" id="brewery-search" type="text" placeholder="enter your city here"/>
+          <input
+            name="search"
+            id="brewery-search"
+            type="text"
+            placeholder="enter your city here"
+          />
           <button type="submit">Search</button>
         </form>
         <section id="breweries-resp"></section>
@@ -36,5 +49,6 @@
       <h3>Cheers!</h3>
     </main>
     <script src="javascript/breweries.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   </body>
 </html>
