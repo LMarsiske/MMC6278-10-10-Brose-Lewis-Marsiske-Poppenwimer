@@ -205,6 +205,19 @@ const displayFavorites = () => {
   favBreweries.replaceChildren(container);
 };
 
+const addRemoveFavorite = (isFavorite, brewery) => {
+  if (isFavorite) {
+    favorites = favorites.filter((el) => el.id !== brewery.id);
+  } else {
+    favorites.push(brewery);
+  }
+
+  let stringified = JSON.stringify(favorites);
+  localStorage.setItem("favorites", stringified);
+  displaySearchResults();
+  displayFavorites();
+};
+
 const displayError = (e) => {
   brewResults.innerHTML = e;
 };
@@ -318,5 +331,12 @@ document.body.onload = async (e) => {
       },
       (error) => console.log(error)
     );
+  }
+
+  let stringifiedFavorites = localStorage.getItem("favorites");
+  if (stringifiedFavorites) {
+    let parsedFavorites = await JSON.parse(stringifiedFavorites);
+    favorites = [...parsedFavorites];
+    displayFavorites();
   }
 };
