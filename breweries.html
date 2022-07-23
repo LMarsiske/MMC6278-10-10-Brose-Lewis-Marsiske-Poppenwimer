@@ -7,16 +7,20 @@
     <!--CSS-->
     <link rel="stylesheet" href="styles.css" />
     <!--Google Font- La Belle Aurore Font-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap" rel="stylesheet"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
+      rel="stylesheet"
+    />
     <!--Adobe Font- Proxima Nova Font-->
-    <link rel="stylesheet" href="https://use.typekit.net/uuu4lfb.css">
+    <link rel="stylesheet" href="https://use.typekit.net/uuu4lfb.css" />
     <title>Breweries</title>
   </head>
   <body class="brew">
     <header>
-      <img class="logo"
+      <img
+        class="logo"
         src="images/logo.png"
         alt="Dad Jokes and Beer Logo"
         title="Dad Jokes and Beer"
@@ -39,22 +43,22 @@
           Florida) or zip code to search for breweries around you.
         </p>
       </section>
+      <form>
+        <label for="brewery-search">Enter Location</label>
+        <input
+          name="search"
+          id="brewery-search"
+          type="text"
+          placeholder="enter your city here"
+        />
+        <button type="submit">Search</button>
+      </form>
       <div id="brewery-section">
-        <form>
-          <label for="brewery-search">Enter Location</label>
-          <input
-            name="search"
-            id="brewery-search"
-            type="text"
-            placeholder="enter your city here"
-          />
-          <button type="submit">Search</button>
-        </form>
-        <section id="breweries-resp"></section>
+        <section class="side-by-side" id="breweries-resp"></section>
+        <section class="side-by-side" id="favorite-breweries"></section>
       </div>
       <h3>Cheers!</h3>
     </main>
     <script src="javascript/breweries.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.21/lodash.min.js"></script>
   </body>
 </html>

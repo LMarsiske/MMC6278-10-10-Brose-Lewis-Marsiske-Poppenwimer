@@ -2,9 +2,12 @@ const brewSection = document.getElementById("brewery-section");
 const form = document.querySelector("form");
 const brewSearch = document.getElementById("brewery-search");
 const brewResults = document.getElementById("breweries-resp");
+const favBreweries = document.getElementById("favorite-breweries");
 const locationIQ_token = "pk.1edb9e195fddf5bd03898c8052521649";
 let states_dictionary = null;
 let currentLocation = null;
+let currentBreweries = [];
+let favorites = [];
 
 form.onsubmit = async (b) => {
   b.preventDefault();
@@ -36,15 +39,20 @@ form.onsubmit = async (b) => {
   }
 };
 
-const displayBreweries = (breweries) => {
-  console.log(currentLocation);
+const displayBreweries = () => {
   brewSearch.value = "";
+  displaySearchResults();
+  displayFavorites();
+};
+
+const displaySearchResults = () => {
   let container = document.createElement("div");
   let showingNear = document.createElement("h2");
   showingNear.innerHTML = `Showing you results near ${currentLocation.address.city}, ${currentLocation.address.state}`;
   container.appendChild(showingNear);
-  breweries.forEach((brewery) => {
+  currentBreweries.forEach((brewery) => {
     const {
+      id,
       name,
       brewery_type,
       street,
@@ -58,35 +66,156 @@ const displayBreweries = (breweries) => {
     let formattedPhone = phone
       ? `${phone.slice(0, 3)}-${phone.slice(3, 6)}-${phone.slice(6)}`
       : "No phone number available";
+    let isFavorite = !!favorites.find((el) => el.id === id);
+    console.log(isFavorite);
     let info = document.createElement("div");
     info.className = "brewery";
+    let title = document.createElement("div");
+    title.className = "brewery_title";
     let breweryName = document.createElement("h3");
-    breweryName.style.fontWeight = "bold";
     breweryName.textContent = name;
+    title.append(breweryName);
+    let fav = document.createElement("input");
+    fav.onclick = () => addRemoveFavorite(isFavorite, brewery);
+    fav.setAttribute("type", "checkbox");
+    fav.classList.add("star");
+    fav.checked = isFavorite;
+    title.append(fav);
 
     let breweryType = document.createElement("p");
     breweryType.textContent = `Brewery type: ${brewery_type}`;
 
+    let phoneNumContainer = document.createElement("div");
+    phoneNumContainer.className = "inline-container";
+    let phoneIcon = document.createElement("span");
+    phoneIcon.innerHTML = "📲";
+    phoneNumContainer.appendChild(phoneIcon);
     let phoneNum = document.createElement("a");
     let phoneText = document.createElement("p");
     phoneText.innerHTML = formattedPhone;
-
     if (phone) {
       phoneNum.href = `tel:${phone}`;
     }
     phoneNum.appendChild(phoneText);
+    phoneNumContainer.appendChild(phoneNum);
 
+    let mapLinkContainer = document.createElement("div");
+    mapLinkContainer.className = "inline-container";
+    let pinIcon = document.createElement("span");
+    pinIcon.innerHTML = "📍";
+    mapLinkContainer.append(pinIcon);
     let mapLink = document.createElement("a");
     let mapLinkText = document.createElement("p");
     mapLink.href = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
     mapLink.target = "_blank";
-    mapLinkText.innerHTML = `${street} ${city}, ${state} ${postal_code}`;
+    mapLinkText.innerHTML = `${street} ${city}, ${state} ${
+      postal_code.split("-")[0]
+    }`;
     mapLink.appendChild(mapLinkText);
+    mapLinkContainer.append(mapLink);
 
-    info.replaceChildren(breweryName, breweryType, phoneNum, mapLink);
+    info.replaceChildren(
+      title,
+      breweryType,
+      phoneNumContainer,
+      mapLinkContainer
+    );
     container.appendChild(info);
   });
   brewResults.replaceChildren(container);
+};
+
+const displayFavorites = () => {
+  console.log("displaying favorites");
+  let container = document.createElement("div");
+  let sectionTitle = document.createElement("h2");
+  sectionTitle.innerHTML = "Your favorited breweries";
+  container.appendChild(sectionTitle);
+  favorites.forEach((brewery) => {
+    const {
+      id,
+      name,
+      brewery_type,
+      street,
+      city,
+      state,
+      postal_code,
+      phone,
+      longitude,
+      latitude,
+    } = brewery;
+    let formattedPhone = phone
+      ? `${phone.slice(0, 3)}-${phone.slice(3, 6)}-${phone.slice(6)}`
+      : "No phone number available";
+
+    let info = document.createElement("div");
+    info.className = "brewery";
+    let breweryHeader = document.createElement("div");
+    breweryHeader.className = "brewery_title";
+    let breweryName = document.createElement("h3");
+    breweryName.textContent = name;
+    breweryHeader.append(breweryName);
+    let fav = document.createElement("input");
+    fav.onclick = () => addRemoveFavorite(true, brewery);
+    fav.setAttribute("type", "checkbox");
+    fav.classList.add("star");
+    fav.checked = true;
+    breweryHeader.append(fav);
+
+    let breweryType = document.createElement("p");
+    breweryType.textContent = `Brewery type: ${brewery_type}`;
+
+    let phoneNumContainer = document.createElement("div");
+    phoneNumContainer.className = "inline-container";
+    let phoneIcon = document.createElement("span");
+    phoneIcon.innerHTML = "📲";
+    phoneNumContainer.appendChild(phoneIcon);
+    let phoneNum = document.createElement("a");
+    let phoneText = document.createElement("p");
+    phoneText.innerHTML = formattedPhone;
+    if (phone) {
+      phoneNum.href = `tel:${phone}`;
+    }
+    phoneNum.appendChild(phoneText);
+    phoneNumContainer.appendChild(phoneNum);
+
+    let mapLinkContainer = document.createElement("div");
+    mapLinkContainer.className = "inline-container";
+    let pinIcon = document.createElement("span");
+    pinIcon.innerHTML = "📍";
+    mapLinkContainer.append(pinIcon);
+    let mapLink = document.createElement("a");
+    let mapLinkText = document.createElement("p");
+    mapLink.href = `https://www.google.com/maps/search/?api=1&query=${latitude},${longitude}`;
+    mapLink.target = "_blank";
+    mapLinkText.innerHTML = `${street} ${city}, ${state} ${
+      postal_code.split("-")[0]
+    }`;
+    mapLink.appendChild(mapLinkText);
+    mapLinkContainer.append(mapLink);
+
+    info.replaceChildren(
+      breweryHeader,
+      breweryType,
+      phoneNumContainer,
+      mapLinkContainer
+    );
+    container.appendChild(info);
+  });
+  favBreweries.replaceChildren(container);
+};
+
+const addRemoveFavorite = (isFavorite, brewery) => {
+  if (isFavorite) {
+    favorites = favorites.filter((el) => el.id !== brewery.id);
+  } else {
+    favorites.push(brewery);
+  }
+
+  let stringified = JSON.stringify(favorites);
+  localStorage.setItem("favorites", stringified);
+  displaySearchResults();
+  displayFavorites();
 };
 
 const displayError = (e) => {
@@ -101,7 +230,8 @@ const searchBreweriesByPosition = async (position) => {
   if (res.status !== 200) displayError("Could not find location");
   let breweries = await res.json();
   console.log(breweries);
-  displayBreweries(breweries);
+  currentBreweries = breweries;
+  displayBreweries();
 };
 
 const geoCode = async (type, query) => {
@@ -201,5 +331,12 @@ document.body.onload = async (e) => {
       },
       (error) => console.log(error)
     );
+  }
+
+  let stringifiedFavorites = localStorage.getItem("favorites");
+  if (stringifiedFavorites) {
+    let parsedFavorites = await JSON.parse(stringifiedFavorites);
+    favorites = [...parsedFavorites];
+    displayFavorites();
   }
 };

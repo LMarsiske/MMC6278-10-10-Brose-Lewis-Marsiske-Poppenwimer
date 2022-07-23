@@ -95,13 +95,12 @@ video {
   src: url("/sketchzone/Sketchzone.otf");
 }
 
-
 /*===========Home Page Styling============*/
 
 /*===========Brewery Page Styling============*/
 .brew {
   background-color: #c3ab8f;
-  font-family: proxima-nova,sans-serif;
+  font-family: proxima-nova, sans-serif;
   font-weight: 400;
   font-style: normal;
   color: #2a231e;
@@ -115,158 +114,192 @@ video {
   text-align: center;
 }
 
+#brewery-section {
+  display: flex;
+  justify-content: space-evenly;
+}
+.side-by-side {
+  width: 45%;
+  text-align: left;
+}
+
 .brewery {
   margin: 2%;
 }
 
-.brew header{
+.brew header {
   background-image: url("images/wood-background.jpg");
   background-repeat: no-repeat;
   background-size: 1500px auto;
 }
 
-.logo{
+.logo {
   margin: 0 auto;
   display: block;
   max-width: 90%;
   padding-top: 50px;
 }
 
-.brew nav{
+.brew nav {
   background-color: #dfd1c1;
   border-top: #387203 solid 5px;
   border-bottom: #387203 solid 5px;
 }
 
-.brew nav ul{
+.brew nav ul {
   max-width: 70%;
   margin: 0 auto;
   text-align: center;
   padding: 15px 0;
 }
 
-.brew ul li{
+.brew ul li {
   display: inline;
-  list-style-type:none;
-  font-size:1.2em;
+  list-style-type: none;
+  font-size: 1.2em;
   padding: 0 50px;
 }
 
-.brew ul li a{
+.brew ul li a {
   text-decoration: none;
-  color:#2a231e;
+  color: #2a231e;
 }
 
 .brew section,
-#brewery-section{
+#brewery-section {
   padding: 0 10px;
 }
 
-.brew h1{
+.brew h1 {
   font-family: sketchzone, proxima nova, sans-serif;
   font-size: 2em;
-  color:#387203;
-  text-shadow:1px 1px #ffffff;
-  padding:20px 0;
+  color: #387203;
+  text-shadow: 1px 1px #ffffff;
+  padding: 20px 0;
 }
 
 .brew h2,
-.brew h3{
-  font-family: 'La Belle Aurore', cursive;
+.brew h3 {
+  font-family: "La Belle Aurore", cursive;
 }
 
-.brew h2{
+.brew h2 {
   font-size: 1.7em;
 }
 
-.brew h3{
-  color:#387203;
+.brew h3 {
+  color: #387203;
   font-size: 3em;
 }
 
-#brewery-section form{
+#brewery-section form {
   padding: 20px 0 50px;
 }
 
-#brewery-section button{
+#brewery-section button {
   color: #ffffff;
   background-color: #387203;
   border-radius: 2px;
   padding: 5px;
 }
 
-#brewery-search{
+#brewery-search {
   border: 2px solid;
   border-radius: 2px;
   padding: 5px;
 }
 
-#breweries-resp{
+#breweries-resp {
   background-color: #ffffff;
   max-width: 100%;
 }
 
-#breweries-resp h2{
-  font-family: proxima-nova,sans-serif;
+#breweries-resp h2,
+#favorite-breweries h2 {
+  font-family: proxima-nova, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
 }
 
-#breweries-resp h3{
-  font-family: proxima-nova,sans-serif;
+#breweries-resp h3,
+#favorite-breweries h3 {
+  font-family: proxima-nova, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 1em;
 }
 
+.brewery_title {
+  display: flex;
+  justify-content: space-between;
+}
+
+.star {
+  position: relative;
+  visibility: hidden;
+  font-size: 30px;
+  cursor: pointer;
+  color: #eb6134;
+  top: -13px;
+}
+.star:before {
+  content: "\2606";
+  position: absolute;
+  visibility: visible;
+}
+.star:checked:before {
+  content: "\2605";
+  position: absolute;
+}
+
+.inline-container {
+  display: flex;
+}
 /*=============Media Queries==============*/
 @media screen and (min-width: 768px) {
-  .logo{
+  .logo {
     max-width: 50%;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
+  /*Brew Page*/
+  .brew {
+    font-size: 1.1em;
+  }
 
+  .brew main {
+    max-width: 60%;
+  }
 
-    /*Brew Page*/
-    .brew{
-      font-size: 1.1em;
-    }
+  .brew main section {
+    padding: 0 70px;
+  }
 
-    .brew main{
-      max-width: 60%;
-    }
+  .brew h1 {
+    font-size: 3em;
+  }
 
-    .brew main section {
-      padding: 0 70px;
-    }
+  .brew h2 {
+    font-size: 2em;
+  }
 
-    .brew h1{
-      font-size:3em;
-    }
-    
-    .brew h2{
-      font-size: 2em;
-    }
+  .brew h3 {
+    font-size: 4em;
+  }
 
-    .brew h3{
-      font-size: 4em;
-    }
+  .brew ul li {
+    font-size: 1.2em;
+  }
 
-    .brew ul li{
-      font-size:1.2em;
-    }
+  #breweries-resp h2,
+  #favorite-breweries h2 {
+    font-size: 1.5em;
+  }
 
-    #breweries-resp h2{
-      font-size: 1.5em;
-    }
-
-    #breweries-resp h3{
-      font-size: 1.2em;
-    }
-
-
+  #breweries-resp h3,
+  #favorite-breweries h3 {
+    font-size: 1.2em;
+  }
 }
