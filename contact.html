@@ -5,20 +5,56 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--CSS-->
-    <link rel="stylesheet" href="style.css">
-    <title>Contact us</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!--Google Font- La Belle Aurore Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
+      rel="stylesheet"
+    />
+    <!--Adobe Font- Proxima Nova Font-->
+    <link rel="stylesheet" href="https://use.typekit.net/uuu4lfb.css" />
+    <title>Contact Us</title>
   </head>
-  <body>
+  <body class="contact">
     <header>
-      <img src="#" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="breweries.html">Find Local Brewery</a></li>
-          <li><a href="contact.html">Contact</a></li>
-        </ul>
+      <img
+      class="logo"
+      src="images/logo.png"
+      alt="Dad Jokes and Beer Logo"
+      title="Dad Jokes and Beer"
+      width="700"
+    />
+    <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="breweries.html">Find Local Brewery</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
     </nav>
+
+      <main>
+        <section>
+          <h1>ESCAPE BEYOND THE MAN CAVE</h1>
+          <h2>Contact Us!</h2>
+        </section>
+      </main>
     </header>
-  <script src="file.js"></script>
+    <div class="contact-form">
+      <form>
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" alt= "first name" placeholder="Your name..">
+    
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" alt="last name" placeholder="Your last name..">
+    
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" alt="subject" placeholder="Write something.."></textarea>
+    
+        <input type="submit" value="Submit" alt="submit button">
+      </form>
+    </div>
+    <script src="javascript/breweries.js"></script>
   </body>
 </html>
