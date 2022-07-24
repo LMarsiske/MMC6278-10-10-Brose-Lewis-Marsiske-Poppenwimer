@@ -117,14 +117,13 @@ video {
 }
 
 /* Nav Styling*/
-.index-body nav {
+nav {
   background-color: #dfd1c1;
   border-top: #387203 solid 5px;
   border-bottom: #387203 solid 5px;
   font-family: proxima-nova, sans-serif;
 }
-
-.index-body nav ul {
+nav ul {
   max-width: 85%;
   margin: 0 auto;
   text-align: center;
@@ -254,7 +253,7 @@ video {
 .brew header {
   background-image: url("images/wood-background.jpg");
   background-repeat: no-repeat;
-  background-size: 1500px auto;
+  background-size: 2000px auto;
 }
 
 .logo {
@@ -264,30 +263,48 @@ video {
   padding-top: 50px;
 }
 
-.brew nav {
-  background-color: #dfd1c1;
-  border-top: #387203 solid 5px;
-  border-bottom: #387203 solid 5px;
-}
-
-.brew nav ul {
-  max-width: 70%;
-  margin: 0 auto;
-  text-align: center;
-  padding: 15px 0;
-}
-
-.brew ul li {
-  display: inline;
-  list-style-type: none;
-  font-size: 1.2em;
-  padding: 0 50px;
-}
-
-.brew ul li a {
-  text-decoration: none;
+.brew .hamburger-menu a{
+  display:block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
   color: #2a231e;
+  text-decoration: none;
 }
+
+.brew .hamburger-btn {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #387203;
+  border-radius: 2px;
+}
+
+.brew .hamburger-menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #c3ab8f;
+  color: #2a231e;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.brew .closeIcon {
+  display: none;
+}
+
+.brew .showMenu {
+  transform: translateY(0);
+}
+
 
 .brew section,
 #brewery-section {
@@ -316,11 +333,11 @@ video {
   font-size: 3em;
 }
 
-#brewery-section form {
+.brew form {
   padding: 20px 0 50px;
 }
 
-#brewery-section button {
+.brew form button {
   color: #ffffff;
   background-color: #387203;
   border-radius: 2px;
@@ -385,7 +402,7 @@ video {
   .logo {
     max-width: 50%;
   }
-
+  
 /* Home page*/
 .hamburger-btn{
   display: none;
@@ -418,6 +435,35 @@ video {
   text-decoration: none;
   color: #2a231e;
 }  
+
+  .brew nav {
+    background-color: #dfd1c1;
+    border-top: #387203 solid 5px;
+    border-bottom: #387203 solid 5px;
+  }
+  
+  .brew .hamburger-menu {
+    all:unset;
+    display:block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 0;
+  }
+  
+  .brew nav .hamburger-menu li{
+    all:unset;
+    display: inline;
+    list-style-type: none;
+    font-size: 1.2em;
+    padding: 0 50px;
+  }
+  
+  .brew nav .hamburger-menu a {
+    all:unset;
+    text-decoration: none;
+    color: #2a231e;
+  }
+
 }
 
 @media screen and (min-width: 1200px) {
@@ -428,10 +474,6 @@ video {
 
   .brew main {
     max-width: 60%;
-  }
-
-  .brew main section {
-    padding: 0 70px;
   }
 
   .brew h1 {
@@ -459,4 +501,112 @@ video {
   #favorite-breweries h3 {
     font-size: 1.2em;
   }
+}
+
+/*=============Contact Page==============*/
+
+.contact {
+  background-color: #c3ab8f;
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #2a231e;
+  font-size: 1.1em;
+}
+
+.contact main {
+  background-color: #dfd1c1;
+  max-width: 90%;
+  margin: 0 auto;
+  text-align: center;
+}
+.contact header {
+  background-image: url("images/wood-background.jpg");
+  background-repeat: no-repeat;
+  background-size: 1500px auto;
+}
+
+.logo {
+  margin: 0 auto;
+  display: block;
+  max-width: 90%;
+  padding-top: 50px;
+}
+
+.contact nav {
+  background-color: #dfd1c1;
+  border-top: #387203 solid 5px;
+  border-bottom: #387203 solid 5px;
+}
+
+.contact nav ul {
+  max-width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.contact ul li {
+  display: inline;
+  list-style-type: none;
+  font-size: 1.2em;
+  padding: 0 50px;
+}
+
+.contact ul li a {
+  text-decoration: none;
+  color: #2a231e;
+}
+.contact h1 {
+  font-family: sketchzone, proxima nova, sans-serif;
+  font-size: 2em;
+  color: #387203;
+  text-shadow: 1px 1px #ffffff;
+  padding: 30px 0;
+}
+.contact h2,
+.contact h3 {
+  font-family: "La Belle Aurore", cursive;
+}
+
+.contact h2 {
+  font-size: 2.7em;
+}
+
+.contact h3 {
+  color: #387203;
+  font-size: 4em;
+}
+
+.contact-form {
+  padding: 150px;
+}
+
+input[type=text], select, textarea {
+  width: 100%; 
+  padding: 12px;  
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  box-sizing: border-box;  
+  margin-top: 6px; 
+  margin-bottom: 16px;
+  resize: vertical 
+}
+
+input[type=submit] {
+  background-color: #04AA6D;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
 }
