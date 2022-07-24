@@ -97,6 +97,129 @@ video {
 
 /*===========Home Page Styling============*/
 
+.logo {
+  margin: 0 auto;
+  display: block;
+  max-width: 90%;
+  padding-top: 50px;
+}
+
+.home {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: white;
+  font-size: 1.1em;
+  padding: 10px;
+  max-width: 70%;
+  margin: 0 auto;
+  
+}
+
+/* Nav Styling*/
+nav {
+  background-color: #dfd1c1;
+  border-top: #387203 solid 5px;
+  border-bottom: #387203 solid 5px;
+  font-family: proxima-nova, sans-serif;
+}
+nav ul {
+  max-width: 85%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.index-body ul li {
+  display: inline;
+  list-style-type: none;
+  font-size: 1.2em;
+  padding: 0 50px;
+}
+
+.index-body ul li a {
+  text-decoration: none;
+  color: #2a231e;
+}
+
+.home img {
+  display: block;
+  margin: 0 auto;
+  max-width: 50%;
+  padding: 10px;
+}
+
+.home button {
+  color: #ffffff;
+  background-color: #387203;
+  border-radius: 2px;
+  padding: 10px;
+  font-size: 1em;
+  max-width: 50%;
+  margin: 0 auto;
+  display: block;
+ 
+}
+
+
+.home h1 {
+  font-family: sketchzone, proxima nova, sans-serif;
+  font-size: 2em;
+  color: #387203;
+  text-shadow: 1px 1px #ffffff;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.home p {
+  padding: 10px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+
+.index-body .hamburger-menu a{
+  display:block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
+  color: #2a231e;
+  text-decoration: none;
+}
+
+.index-body .hamburger-btn {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #387203;
+  border-radius: 2px;
+}
+
+.index-body .hamburger-menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #c3ab8f;
+  color: #2a231e;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.index-body .closeIcon {
+  display: none;
+}
+
+.index-body .showMenu {
+  transform: translateY(0);
+}
+
 /*===========Brewery Page Styling============*/
 .brew {
   background-color: #c3ab8f;
@@ -279,10 +402,39 @@ video {
   .logo {
     max-width: 50%;
   }
+  
+/* Home page*/
+.hamburger-btn{
+  display: none;
+}
 
-  .hamburger-btn{
-    display: none;
-  }
+.index-body nav {
+  background-color: #dfd1c1;
+  border-top: #387203 solid 5px;
+  border-bottom: #387203 solid 5px;
+}
+
+.index-body .hamburger-menu {
+  all:unset;
+  display:block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 15px 0;
+}
+
+.index-body .hamburger-menu li{
+  all:unset;
+  display: inline;
+  list-style-type: none;
+  font-size: 1.2em;
+  padding: 0 50px;
+}
+
+.index-body .hamburger-menu a {
+  all:unset;
+  text-decoration: none;
+  color: #2a231e;
+}  
 
   .brew nav {
     background-color: #dfd1c1;
@@ -311,6 +463,7 @@ video {
     text-decoration: none;
     color: #2a231e;
   }
+
 }
 
 @media screen and (min-width: 1200px) {

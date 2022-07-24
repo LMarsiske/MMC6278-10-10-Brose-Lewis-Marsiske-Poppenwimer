@@ -5,26 +5,43 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--CSS-->
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!--Google Font- La Belle Aurore Font-->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=La+Belle+Aurore&display=swap"
+          rel="stylesheet"/>
+
+    <!--Adobe Font- Proxima Nova Font-->
+    <link rel="stylesheet" href="https://use.typekit.net/uuu4lfb.css" />
+    
     <title>Home</title>
   </head>
-  <body class="index-body">
-
+  <body class="index-body" background="images/plank-background.png">
     <header>
-      <img src="#" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="breweries.html">Find Local Brewery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+      <img class="logo" src="images/logo.png" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer" width="800">
+        <button class="hamburger-btn">
+          <i class="menuIcon material-icons">menu</i>
+          <i class="closeIcon material-icons">close</i>
+        </button>
+        <ul class="hamburger-menu" id="main-menu">
+          <li><a class="menuItem" href="index.html">Home</a></li>
+          <li><a class="menuItem" href="breweries.html">Find Local Brewery</a></li>
+          <li><a class="menuItem" href="contact.html">Contact</a></li>
         </ul>
-    </nav>
     </header>
-    <main>
+    <main class="home">
+      <img src="images/full-beer.png" alt="glass of beer and hops" title="Beer Glass" width="300">
       <h1>What's so funny?</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit maiores incidunt beatae corporis provident nam et omnis necessitatibus voluptatum distinctio sequi reiciendis debitis laudantium, quasi harum minima! Dolores, quo amet.</p>
-      <button>Tell me a joke!</button>
+      <p>The only thing better than a fresh beer is an even fresher joke. Click the button to hear our joke of the day!</p>
+      <button id="home-btn">Tell me a joke!</button>
+      <br>
+      <p id="joke-title"></p>
+      <p id="joke"></p>
+      <p id="answer"></p>
+
     </main>
-  <script src="file.js"></script>
+  <script src="javascript/index.js"></script>
   </body>
 </html>
