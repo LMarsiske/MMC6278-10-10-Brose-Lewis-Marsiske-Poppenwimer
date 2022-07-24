@@ -15,6 +15,10 @@
     />
     <!--Adobe Font- Proxima Nova Font-->
     <link rel="stylesheet" href="https://use.typekit.net/uuu4lfb.css" />
+
+    <!--Google Material Icon-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
     <title>Breweries</title>
   </head>
   <body class="brew">
@@ -27,10 +31,14 @@
         width="700"
       />
       <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="breweries.html">Find Local Brewery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+        <button class="hamburger-btn">
+          <i class="menuIcon material-icons">menu</i>
+          <i class="closeIcon material-icons">close</i>
+        </button>
+        <ul class="hamburger-menu" id="main-menu">
+          <li><a class="menuItem" href="index.html">Home</a></li>
+          <li><a class="menuItem" href="breweries.html">Find Local Brewery</a></li>
+          <li><a class="menuItem" href="contact.html">Contact</a></li>
         </ul>
       </nav>
     </header>
