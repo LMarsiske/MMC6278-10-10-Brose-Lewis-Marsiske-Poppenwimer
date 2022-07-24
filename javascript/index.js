@@ -1,41 +1,53 @@
 var newJoke = document.getElementById('joke')
 console.log(joke)
 var newAnswer = document.getElementById('answer')
+var jokeTitle = document.getElementById('joke-title')
 console.log(joke)
 var joke = null
 var timeStamp = null
 var btn = document.getElementById('home-btn')
 
-btn.onclick = async () => {
-    let response = await fetch("https://api.jokes.one/jod").catch(e => {console.log(e)})
+const fetchJoke = async () => {
+    let response = await fetch("https://icanhazdadjoke.com",{headers:{'Accept':'application/json'}}).catch(e => {console.log(e)})
+    console.log(response)
     if (response.status !== 200) {
         //use same handling error
     }
     let responseJson = await response.json()
-    //let jokeObject = responseJson.contents.jokes[0].joke
-    console.log(responseJson) 
-}
-
-
-
-/*document.body.onload = async() => {
-let storeJoke = localStorage.getItem('storeJoke')
-let lastFetch = localStorage.getItem('lastFetch')
-if (storeJoke && lastFetch) {
-    joke = await JSON.parse(storeJoke)
-    timeStamp = await JSON.parse(lastFetch)
-}
-let currentTimeStamp = Date.now()
-if (currentTimeStamp >= timeStamp + 86400000) {
-    let response = await fetch("https://api.jokes.one/jod").catch(e => {console.log(e)})
-    if (response.status !== 200) {
-        //use same handling error
-    }
-    let responseJson = await response.json()
-    //let jokeObject = responseJson.contents.jokes[0].joke
     console.log(responseJson)
-    timeStamp = currentTimeStamp
 
-    
+    //show joke and answer in p tags
+    newJoke.innerHTML = responseJson.joke
 }
-}*/
+
+btn.onclick = fetchJoke
+document.body.onload = fetchJoke
+
+// HAMBURGER MENU
+
+const menu = document.querySelector(".hamburger-menu");
+const menuItems = document.querySelectorAll(".menuItem");
+const hamburger= document.querySelector(".hamburger-btn");
+const closeIcon= document.querySelector(".closeIcon");
+const menuIcon = document.querySelector(".menuIcon");
+
+function toggleMenu() {
+  if (menu.classList.contains("showMenu")) {
+    menu.classList.remove("showMenu");
+    closeIcon.style.display = "none";
+    menuIcon.style.display = "block";
+  } else {
+    menu.classList.add("showMenu");
+    closeIcon.style.display = "block";
+    menuIcon.style.display = "none";
+  }
+}
+
+hamburger.addEventListener("click", toggleMenu);
+
+menuItems.forEach( 
+  function(menuItem) { 
+    menuItem.addEventListener("click", toggleMenu);
+  }
+)
+

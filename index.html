@@ -19,17 +19,17 @@
     <title>Home</title>
   </head>
   <body class="index-body" background="images/plank-background.png">
-   
-
     <header>
       <img class="logo" src="images/logo.png" alt="Dad Jokes and Beer Logo" title="Dad Jokes and Beer" width="800">
-      <nav>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="breweries.html">Find Local Brewery</a></li>
-          <li><a href="contact.html">Contact</a></li>
+        <button class="hamburger-btn">
+          <i class="menuIcon material-icons">menu</i>
+          <i class="closeIcon material-icons">close</i>
+        </button>
+        <ul class="hamburger-menu" id="main-menu">
+          <li><a class="menuItem" href="index.html">Home</a></li>
+          <li><a class="menuItem" href="breweries.html">Find Local Brewery</a></li>
+          <li><a class="menuItem" href="contact.html">Contact</a></li>
         </ul>
-    </nav>
     </header>
     <main class="home">
       <img src="images/full-beer.png" alt="glass of beer and hops" title="Beer Glass" width="300">
@@ -37,6 +37,7 @@
       <p>The only thing better than a fresh beer is an even fresher joke. Click the button to hear our joke of the day!</p>
       <button id="home-btn">Tell me a joke!</button>
       <br>
+      <p id="joke-title"></p>
       <p id="joke"></p>
       <p id="answer"></p>
 
