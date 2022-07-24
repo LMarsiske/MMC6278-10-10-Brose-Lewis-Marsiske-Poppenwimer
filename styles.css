@@ -104,16 +104,22 @@ video {
   padding-top: 50px;
 }
 
-.home {
+.index-body {
   font-family: proxima-nova, sans-serif;
   font-weight: 400;
   font-style: normal;
   color: white;
   font-size: 1.1em;
   padding: 10px;
-  max-width: 70%;
+  max-width: 100%;
   margin: 0 auto;
   
+}
+
+#joke {
+  font-family: "La Belle Aurore", cursive;
+  color: #387203;
+  font-size: 1.3em;
 }
 
 /* Nav Styling*/
@@ -124,22 +130,28 @@ nav {
   font-family: proxima-nova, sans-serif;
 }
 nav ul {
-  max-width: 85%;
+  max-width: 100%;
   margin: 0 auto;
   text-align: center;
   padding: 15px 0;
 }
 
-.index-body ul li {
+ ul li {
   display: inline;
   list-style-type: none;
   font-size: 1.2em;
   padding: 0 50px;
 }
 
-.index-body ul li a {
+ul li a {
   text-decoration: none;
   color: #2a231e;
+}
+
+.home {
+  background-color: #c3ab8f;
+  max-width: 90%;
+  margin: 0 auto;
 }
 
 .home img {

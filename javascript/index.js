@@ -1,7 +1,6 @@
 var newJoke = document.getElementById('joke')
 console.log(joke)
-var newAnswer = document.getElementById('answer')
-var jokeTitle = document.getElementById('joke-title')
+
 console.log(joke)
 var joke = null
 var timeStamp = null
@@ -51,4 +50,5 @@ menuItems.forEach(
     menuItem.addEventListener("click", toggleMenu);
   }
 )
+
 
