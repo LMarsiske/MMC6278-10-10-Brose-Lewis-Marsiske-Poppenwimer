@@ -113,7 +113,6 @@ video {
   padding: 10px;
   max-width: 70%;
   margin: 0 auto;
-  
 }
 
 /* Nav Styling*/
@@ -128,6 +127,11 @@ nav ul {
   margin: 0 auto;
   text-align: center;
   padding: 15px 0;
+}
+
+.index-body {
+  background-image: url("./images/plank-background.png");
+  background-size: cover;
 }
 
 .index-body ul li {
@@ -158,9 +162,7 @@ nav ul {
   max-width: 50%;
   margin: 0 auto;
   display: block;
- 
 }
-
 
 .home h1 {
   font-family: sketchzone, proxima nova, sans-serif;
@@ -177,9 +179,8 @@ nav ul {
   text-align: center;
 }
 
-
-.index-body .hamburger-menu a{
-  display:block;
+.index-body .hamburger-menu a {
+  display: block;
   margin: 2rem 4rem;
   font-size: 1.8rem;
   color: #2a231e;
@@ -263,8 +264,8 @@ nav ul {
   padding-top: 50px;
 }
 
-.brew .hamburger-menu a{
-  display:block;
+.brew .hamburger-menu a {
+  display: block;
   margin: 2rem 4rem;
   font-size: 1.8rem;
   color: #2a231e;
@@ -304,7 +305,6 @@ nav ul {
 .brew .showMenu {
   transform: translateY(0);
 }
-
 
 .brew section,
 #brewery-section {
@@ -402,68 +402,67 @@ nav ul {
   .logo {
     max-width: 50%;
   }
-  
-/* Home page*/
-.hamburger-btn{
-  display: none;
-}
 
-.index-body nav {
-  background-color: #dfd1c1;
-  border-top: #387203 solid 5px;
-  border-bottom: #387203 solid 5px;
-}
+  /* Home page*/
+  .hamburger-btn {
+    display: none;
+  }
 
-.index-body .hamburger-menu {
-  all:unset;
-  display:block;
-  margin: 0 auto;
-  text-align: center;
-  padding: 15px 0;
-}
+  .index-body nav {
+    background-color: #dfd1c1;
+    border-top: #387203 solid 5px;
+    border-bottom: #387203 solid 5px;
+  }
 
-.index-body .hamburger-menu li{
-  all:unset;
-  display: inline;
-  list-style-type: none;
-  font-size: 1.2em;
-  padding: 0 50px;
-}
+  .index-body .hamburger-menu {
+    all: unset;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 0;
+  }
 
-.index-body .hamburger-menu a {
-  all:unset;
-  text-decoration: none;
-  color: #2a231e;
-}  
+  .index-body .hamburger-menu li {
+    all: unset;
+    display: inline;
+    list-style-type: none;
+    font-size: 1.2em;
+    padding: 0 50px;
+  }
+
+  .index-body .hamburger-menu a {
+    all: unset;
+    text-decoration: none;
+    color: #2a231e;
+  }
 
   .brew nav {
     background-color: #dfd1c1;
     border-top: #387203 solid 5px;
     border-bottom: #387203 solid 5px;
   }
-  
+
   .brew .hamburger-menu {
-    all:unset;
-    display:block;
+    all: unset;
+    display: block;
     margin: 0 auto;
     text-align: center;
     padding: 15px 0;
   }
-  
-  .brew nav .hamburger-menu li{
-    all:unset;
+
+  .brew nav .hamburger-menu li {
+    all: unset;
     display: inline;
     list-style-type: none;
     font-size: 1.2em;
     padding: 0 50px;
   }
-  
+
   .brew nav .hamburger-menu a {
-    all:unset;
+    all: unset;
     text-decoration: none;
     color: #2a231e;
   }
-
 }
 
 @media screen and (min-width: 1200px) {
@@ -582,26 +581,28 @@ nav ul {
   padding: 150px;
 }
 
-input[type=text], select, textarea {
-  width: 100%; 
-  padding: 12px;  
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box;  
-  margin-top: 6px; 
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
   margin-bottom: 16px;
-  resize: vertical 
+  resize: vertical;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
+input[type="submit"] {
+  background-color: #04aa6d;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
 
