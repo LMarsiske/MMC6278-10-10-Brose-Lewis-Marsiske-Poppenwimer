@@ -11,7 +11,8 @@ const fetchJoke = async () => {
     let response = await fetch("https://icanhazdadjoke.com",{headers:{'Accept':'application/json'}}).catch(e => {console.log(e)})
     console.log(response)
     if (response.status !== 200) {
-        //use same handling error
+        newJoke.innerHTML = "We aren't feeling very humorous right now. Please try again later!"
+        return
     }
     let responseJson = await response.json()
     console.log(responseJson)
