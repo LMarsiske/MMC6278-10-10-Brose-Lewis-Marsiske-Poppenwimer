@@ -113,7 +113,6 @@ video {
   padding: 10px;
   max-width: 100%;
   margin: 0 auto;
-  
 }
 
 #joke {
@@ -136,7 +135,7 @@ nav ul {
   padding: 15px 0;
 }
 
- ul li {
+ul li {
   display: inline;
   list-style-type: none;
   font-size: 1.2em;
@@ -170,9 +169,7 @@ ul li a {
   max-width: 50%;
   margin: 0 auto;
   display: block;
- 
 }
-
 
 .home h1 {
   font-family: sketchzone, proxima nova, sans-serif;
@@ -189,9 +186,8 @@ ul li a {
   text-align: center;
 }
 
-
-.index-body .hamburger-menu a{
-  display:block;
+.index-body .hamburger-menu a {
+  display: block;
   margin: 2rem 4rem;
   font-size: 1.8rem;
   color: #2a231e;
@@ -275,8 +271,8 @@ ul li a {
   padding-top: 50px;
 }
 
-.brew .hamburger-menu a{
-  display:block;
+.brew .hamburger-menu a {
+  display: block;
   margin: 2rem 4rem;
   font-size: 1.8rem;
   color: #2a231e;
@@ -315,8 +311,8 @@ ul li a {
 
 .brew .showMenu {
   transform: translateY(0);
+  z-index: 1000;
 }
-
 
 .brew section,
 #brewery-section {
@@ -409,73 +405,144 @@ ul li a {
 .inline-container {
   display: flex;
 }
+
+/*=============Contact Page==============*/
+
+.contact .hamburger-menu a {
+  display: block;
+  margin: 2rem 4rem;
+  font-size: 1.8rem;
+  color: #2a231e;
+  text-decoration: none;
+}
+
+.contact .hamburger-btn {
+  position: fixed;
+  z-index: 100;
+  top: 1rem;
+  right: 1rem;
+  padding: 4px;
+  cursor: pointer;
+  color: #ffffff;
+  background-color: #387203;
+  border-radius: 2px;
+}
+
+.contact .hamburger-menu {
+  position: fixed;
+  transform: translateY(-100%);
+  transition: transform 0.2s;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #c3ab8f;
+  color: #2a231e;
+  list-style: none;
+  padding-top: 4rem;
+}
+
+.contact .closeIcon {
+  display: none;
+}
+
+.contact .showMenu {
+  transform: translateY(0);
+}
 /*=============Media Queries==============*/
 @media screen and (min-width: 768px) {
   .logo {
     max-width: 50%;
   }
-  
-/* Home page*/
-.hamburger-btn{
-  display: none;
-}
 
-.index-body nav {
-  background-color: #dfd1c1;
-  border-top: #387203 solid 5px;
-  border-bottom: #387203 solid 5px;
-}
+  /* Home page*/
+  .hamburger-btn {
+    display: none;
+  }
 
-.index-body .hamburger-menu {
-  all:unset;
-  display:block;
-  margin: 0 auto;
-  text-align: center;
-  padding: 15px 0;
-}
+  .index-body nav {
+    background-color: #dfd1c1;
+    border-top: #387203 solid 5px;
+    border-bottom: #387203 solid 5px;
+  }
 
-.index-body .hamburger-menu li{
-  all:unset;
-  display: inline;
-  list-style-type: none;
-  font-size: 1.2em;
-  padding: 0 50px;
-}
+  .index-body .hamburger-menu {
+    all: unset;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 0;
+  }
 
-.index-body .hamburger-menu a {
-  all:unset;
-  text-decoration: none;
-  color: #2a231e;
-}  
+  .index-body .hamburger-menu li {
+    all: unset;
+    display: inline;
+    list-style-type: none;
+    font-size: 1.2em;
+    padding: 0 50px;
+  }
+
+  .index-body .hamburger-menu a {
+    all: unset;
+    text-decoration: none;
+    color: #2a231e;
+  }
 
   .brew nav {
     background-color: #dfd1c1;
     border-top: #387203 solid 5px;
     border-bottom: #387203 solid 5px;
   }
-  
+
   .brew .hamburger-menu {
-    all:unset;
-    display:block;
+    all: unset;
+    display: block;
     margin: 0 auto;
     text-align: center;
     padding: 15px 0;
   }
-  
-  .brew nav .hamburger-menu li{
-    all:unset;
+
+  .brew nav .hamburger-menu li {
+    all: unset;
     display: inline;
     list-style-type: none;
     font-size: 1.2em;
     padding: 0 50px;
   }
-  
+
   .brew nav .hamburger-menu a {
-    all:unset;
+    all: unset;
     text-decoration: none;
     color: #2a231e;
   }
 
+  .contact nav {
+    background-color: #dfd1c1;
+    border-top: #387203 solid 5px;
+    border-bottom: #387203 solid 5px;
+  }
+
+  .contact .hamburger-menu {
+    all: unset;
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding: 15px 0;
+  }
+
+  .contact nav .hamburger-menu li {
+    all: unset;
+    display: inline;
+    list-style-type: none;
+    font-size: 1.2em;
+    padding: 0 50px;
+  }
+
+  .contact nav .hamburger-menu a {
+    all: unset;
+    text-decoration: none;
+    color: #2a231e;
+  }
 }
 
 @media screen and (min-width: 1200px) {
@@ -552,7 +619,6 @@ ul li a {
 }
 
 .contact nav ul {
-  max-width: 70%;
   margin: 0 auto;
   text-align: center;
   padding: 15px 0;
@@ -594,26 +660,28 @@ ul li a {
   padding: 150px;
 }
 
-input[type=text], select, textarea {
-  width: 100%; 
-  padding: 12px;  
-  border: 1px solid #ccc; 
-  border-radius: 4px; 
-  box-sizing: border-box;  
-  margin-top: 6px; 
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
   margin-bottom: 16px;
-  resize: vertical 
+  resize: vertical;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
+input[type="submit"] {
+  background-color: #04aa6d;
   color: white;
   padding: 12px 20px;
   border: none;
   border-radius: 4px;
   cursor: pointer;
 }
-input[type=submit]:hover {
+input[type="submit"]:hover {
   background-color: #45a049;
 }
 

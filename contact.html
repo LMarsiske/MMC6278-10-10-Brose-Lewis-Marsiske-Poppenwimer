@@ -22,41 +22,44 @@
   <body class="contact">
     <header>
       <img
-      class="logo"
-      src="images/logo.png"
-      alt="Dad Jokes and Beer Logo"
-      title="Dad Jokes and Beer"
-      width="700"
-    />
-    <nav>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="breweries.html">Find Local Brewery</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-    </nav>
-
+        class="logo"
+        src="images/logo.png"
+        alt="Dad Jokes and Beer Logo"
+        title="Dad Jokes and Beer"
+        width="700"
+      />
+      <nav>
+        <button class="hamburger-btn">
+          <i class="menuIcon material-icons">menu</i>
+          <i class="closeIcon material-icons">close</i>
+        </button>
+        <ul class="hamburger-menu" id="main-menu">
+          <li><a class="menuItem" href="index.html">Home</a></li>
+          <li><a class="menuItem" href="breweries.html">Find Local Brewery</a></li>
+          <li><a class="menuItem" href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </header>
       <main>
         <section>
           <h1>ESCAPE BEYOND THE MAN CAVE</h1>
           <h2>Contact Us!</h2>
         </section>
+        <div class="contact-form">
+          <form>
+            <label for="fname">First Name</label>
+            <input type="text" id="fname" name="firstname" alt= "first name" placeholder="Your name..">
+        
+            <label for="lname">Last Name</label>
+            <input type="text" id="lname" name="lastname" alt="last name" placeholder="Your last name..">
+        
+            <label for="subject">Subject</label>
+            <textarea id="subject" name="subject" alt="subject" placeholder="Write something.."></textarea>
+        
+            <input type="submit" value="Submit" alt="submit button">
+          </form>
+        </div>
       </main>
-    </header>
-    <div class="contact-form">
-      <form>
-        <label for="fname">First Name</label>
-        <input type="text" id="fname" name="firstname" alt= "first name" placeholder="Your name..">
-    
-        <label for="lname">Last Name</label>
-        <input type="text" id="lname" name="lastname" alt="last name" placeholder="Your last name..">
-    
-        <label for="subject">Subject</label>
-        <textarea id="subject" name="subject" alt="subject" placeholder="Write something.."></textarea>
-    
-        <input type="submit" value="Submit" alt="submit button">
-      </form>
-    </div>
     <script src="javascript/breweries.js"></script>
   </body>
 </html>
